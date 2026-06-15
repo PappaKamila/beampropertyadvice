@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BEAM Property Advisory</title>
+  <meta name="description" content="BEAM Property Advisory provides independent property advocacy and evidence-led support for residents navigating repairs, damp and mould, building defects, housing complaints and property inspections." />
+  <style>
+    :root {
+      --navy: #061b44;
+      --cream: #fbfaf7;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--cream);
+      color: var(--navy);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .page {
+      min-height: 100vh;
+      background-image: url("beam-landing-page.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .fallback {
+      display: none;
+      padding: 48px 28px;
+      max-width: 720px;
+    }
+
+    .fallback h1 {
+      font-size: 48px;
+      letter-spacing: 0.28em;
+      margin: 0 0 12px;
+      font-weight: 500;
+    }
+
+    .fallback .strapline {
+      letter-spacing: 0.32em;
+      font-size: 14px;
+      margin-bottom: 56px;
+    }
+
+    .fallback h2 {
+      font-size: 36px;
+      line-height: 1.2;
+      margin-bottom: 24px;
+      font-weight: 500;
+    }
+
+    .fallback p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+
+    .fallback a {
+      color: var(--navy);
+      text-decoration: none;
+      border-bottom: 1px solid var(--navy);
+    }
+
+    @media (max-width: 700px) {
+      .page {
+        background-size: contain;
+        background-position: top center;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .fallback {
+        display: block;
+      }
+
+      .page {
+        background-image: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page" aria-label="BEAM Property Advisory landing page">
+    <section class="fallback">
+      <h1>BEAM</h1>
+      <div class="strapline">PROPERTY ADVISORY</div>
+      <h2>Independent Property Advocacy</h2>
+      <p>
+        Evidence-led support for residents navigating repairs, damp and mould,
+        building defects, housing complaints and property inspections.
+      </p>
+      <p>
+        <a href="mailto:info@beampropertyadvice.co.uk">info@beampropertyadvice.co.uk</a><br />
+        <a href="tel:+447424353114">07424 353114</a>
+      </p>
+      <p>124 City Road<br />London<br />EC1V 2NX</p>
+    </section>
+  </main>
+</body>
+</html>
