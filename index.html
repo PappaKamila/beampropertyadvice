@@ -17,43 +17,37 @@
       --soft: #f3f1eb;
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
       background: var(--paper);
       color: var(--navy);
-      font-family: Inter, Arial, Helvetica, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
-    .wrap {
+    .page {
       min-height: 100vh;
       display: grid;
-      grid-template-columns: minmax(360px, 43%) 1fr;
+      grid-template-columns: minmax(390px, 42%) 1fr;
       background:
         radial-gradient(circle at 70% 20%, rgba(6,27,68,0.05), transparent 32%),
-        linear-gradient(90deg, var(--paper) 0%, var(--paper) 43%, #f8f7f2 43%, #f8f7f2 100%);
+        linear-gradient(90deg, var(--paper) 0%, var(--paper) 42%, #f8f7f2 42%, #f8f7f2 100%);
     }
 
-    .content {
-      padding: clamp(38px, 6vw, 88px);
+    .left {
+      padding: clamp(42px, 5.8vw, 86px);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      gap: 48px;
+      gap: 44px;
       min-height: 100vh;
-      animation: fadeUp 900ms ease both;
+      animation: fadeUp 800ms ease both;
     }
 
     .brand h1 {
       margin: 0;
-      font-size: clamp(58px, 8vw, 112px);
+      font-size: clamp(58px, 7.5vw, 110px);
       letter-spacing: 0.28em;
       font-weight: 400;
       line-height: 0.92;
@@ -67,8 +61,8 @@
     }
 
     .brand .sub {
-      font-size: clamp(13px, 1.3vw, 18px);
-      letter-spacing: 0.48em;
+      font-size: clamp(13px, 1.2vw, 18px);
+      letter-spacing: 0.46em;
       text-transform: uppercase;
       white-space: nowrap;
     }
@@ -76,7 +70,7 @@
     .hero h2 {
       font-family: Georgia, "Times New Roman", serif;
       font-weight: 400;
-      font-size: clamp(40px, 4.4vw, 68px);
+      font-size: clamp(40px, 4.2vw, 64px);
       line-height: 1.05;
       margin: 0 0 28px;
       max-width: 720px;
@@ -89,18 +83,19 @@
     }
 
     .hero p {
-      font-size: clamp(18px, 1.5vw, 23px);
+      font-size: clamp(18px, 1.45vw, 22px);
       line-height: 1.55;
       margin: 0;
       max-width: 640px;
       color: var(--ink);
     }
 
+    .mobile-visual { display: none; }
+
     .services {
       display: grid;
       grid-template-columns: 1fr;
       gap: 15px;
-      margin-top: 8px;
       max-width: 460px;
     }
 
@@ -126,7 +121,6 @@
       border-top: 1px solid var(--line);
       padding-top: 28px;
       display: grid;
-      grid-template-columns: 1fr;
       gap: 10px;
       font-size: 16px;
       line-height: 1.45;
@@ -139,34 +133,28 @@
       border-bottom: 1px solid rgba(6,27,68,0.45);
     }
 
-    .registered {
-      margin-top: 14px;
-      color: var(--muted);
-    }
+    .registered { margin-top: 14px; color: var(--muted); }
+    .registered strong { color: var(--navy); font-weight: 600; }
 
-    .registered strong {
-      color: var(--navy);
-      font-weight: 600;
-    }
-
-    .visual {
+    .right {
       min-height: 100vh;
       position: relative;
       overflow: hidden;
+      padding: clamp(24px, 4vw, 60px);
       display: flex;
       align-items: stretch;
       justify-content: center;
-      padding: clamp(24px, 4vw, 60px);
     }
 
-    .visual img {
+    .right img,
+    .mobile-visual img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center right;
       filter: contrast(1.02) saturate(0.96);
       opacity: 0.92;
-      animation: fadeIn 1300ms ease both;
+      animation: fadeIn 1100ms ease both;
     }
 
     .motto {
@@ -183,10 +171,6 @@
       backdrop-filter: blur(3px);
     }
 
-    .mobile-note {
-      display: none;
-    }
-
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(14px); }
       to { opacity: 1; transform: translateY(0); }
@@ -198,24 +182,25 @@
     }
 
     @media (max-width: 900px) {
-      .wrap {
+      .page {
         display: block;
         background: var(--paper);
       }
 
-      .content {
+      .left {
         min-height: auto;
-        padding: 42px 28px 34px;
-        gap: 44px;
+        padding: 38px 28px 34px;
+        gap: 40px;
       }
 
       .brand h1 {
-        font-size: 62px;
-        letter-spacing: 0.24em;
+        font-size: 56px;
+        letter-spacing: 0.23em;
       }
 
       .brand .rule {
-        margin-left: 112px;
+        width: 86px;
+        margin: 22px 0 20px 108px;
       }
 
       .brand .sub {
@@ -224,72 +209,68 @@
       }
 
       .hero h2 {
-        font-size: 43px;
+        font-size: 38px;
+        line-height: 1.08;
       }
 
       .hero p {
         font-size: 18px;
       }
 
-      .services {
-        gap: 17px;
-      }
-
-      .service {
-        font-size: 13px;
-      }
-
-      .visual {
-        min-height: auto;
-        padding: 0 0 28px;
+      .mobile-visual {
         display: block;
+        margin: -12px -28px 0;
+        background: #f8f7f2;
       }
 
-      .visual img {
+      .mobile-visual img {
+        display: block;
         width: 100%;
         height: auto;
         object-fit: contain;
         object-position: center;
-        display: block;
       }
 
-      .motto {
-        position: static;
-        margin: 20px 28px 0;
-        background: transparent;
-        padding: 18px 0 0 18px;
-        font-size: 30px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .content {
-        padding: 36px 24px 28px;
+      .services {
+        gap: 18px;
+        padding-top: 4px;
       }
 
-      .brand h1 {
-        font-size: 54px;
-      }
-
-      .brand .sub {
-        white-space: normal;
-        line-height: 1.8;
-      }
-
-      .hero h2 {
-        font-size: 39px;
+      .service {
+        font-size: 13px;
+        letter-spacing: 0.18em;
       }
 
       .contact {
-        font-size: 16px;
+        margin-top: 4px;
       }
+
+      .right {
+        display: none;
+      }
+
+      .mobile-motto {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 34px;
+        line-height: 1.18;
+        padding: 24px 0 0 18px;
+        border-left: 1px solid var(--navy);
+      }
+    }
+
+    @media (max-width: 420px) {
+      .left { padding: 34px 24px 30px; }
+      .brand h1 { font-size: 50px; }
+      .brand .sub { white-space: normal; line-height: 1.8; }
+      .hero h2 { font-size: 35px; }
+      .mobile-visual { margin-left: -24px; margin-right: -24px; }
     }
   </style>
 </head>
 
 <body>
-  <main class="wrap">
-    <section class="content">
+  <main class="page">
+    <section class="left">
       <div class="brand">
         <h1>BEAM</h1>
         <div class="rule"></div>
@@ -305,31 +286,23 @@
         </p>
       </section>
 
+      <section class="mobile-visual" aria-label="Architectural illustration">
+        <img src="beam-landing-page.png" alt="Architectural line drawing of a London townhouse" />
+      </section>
+
       <section class="services" aria-label="Services">
-        <div class="service">
-          <svg class="icon" viewBox="0 0 24 24"><path d="M4 12l8-7 8 7"/><path d="M6 10v9h12v-9"/><path d="M10 19v-6h4v6"/></svg>
-          Repair Issues
-        </div>
-        <div class="service">
-          <svg class="icon" viewBox="0 0 24 24"><path d="M12 3C8 8 6 11 6 15a6 6 0 0 0 12 0c0-4-2-7-6-12z"/></svg>
-          Damp &amp; Mould
-        </div>
-        <div class="service">
-          <svg class="icon" viewBox="0 0 24 24"><path d="M3 8c3 2 6 2 9 0s6-2 9 0"/><path d="M3 13c3 2 6 2 9 0s6-2 9 0"/><path d="M3 18c3 2 6 2 9 0s6-2 9 0"/></svg>
-          Water Ingress
-        </div>
-        <div class="service">
-          <svg class="icon" viewBox="0 0 24 24"><path d="M4 5h16v14H4z"/><path d="M4 11h16"/><path d="M10 5v14"/><path d="M16 5v14"/></svg>
-          Building Defects
-        </div>
-        <div class="service">
-          <svg class="icon" viewBox="0 0 24 24"><path d="M5 6h14v10H8l-3 3z"/></svg>
-          Housing Complaints
-        </div>
-        <div class="service">
-          <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="M16 16l5 5"/></svg>
-          Property Inspections
-        </div>
+        <div class="service"><svg class="icon" viewBox="0 0 24 24"><path d="M4 12l8-7 8 7"/><path d="M6 10v9h12v-9"/><path d="M10 19v-6h4v6"/></svg>Repair Issues</div>
+        <div class="service"><svg class="icon" viewBox="0 0 24 24"><path d="M12 3C8 8 6 11 6 15a6 6 0 0 0 12 0c0-4-2-7-6-12z"/></svg>Damp &amp; Mould</div>
+        <div class="service"><svg class="icon" viewBox="0 0 24 24"><path d="M3 8c3 2 6 2 9 0s6-2 9 0"/><path d="M3 13c3 2 6 2 9 0s6-2 9 0"/><path d="M3 18c3 2 6 2 9 0s6-2 9 0"/></svg>Water Ingress</div>
+        <div class="service"><svg class="icon" viewBox="0 0 24 24"><path d="M4 5h16v14H4z"/><path d="M4 11h16"/><path d="M10 5v14"/><path d="M16 5v14"/></svg>Building Defects</div>
+        <div class="service"><svg class="icon" viewBox="0 0 24 24"><path d="M5 6h14v10H8l-3 3z"/></svg>Housing Complaints</div>
+        <div class="service"><svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="M16 16l5 5"/></svg>Property Inspections</div>
+      </section>
+
+      <section class="mobile-motto">
+        Better homes.<br />
+        Stronger voices.<br />
+        Fair treatment.
       </section>
 
       <section class="contact" aria-label="Contact details">
@@ -343,13 +316,9 @@
       </section>
     </section>
 
-    <section class="visual" aria-label="Architectural illustration">
+    <section class="right" aria-label="Architectural illustration">
       <img src="beam-landing-page.png" alt="Architectural line drawing of a London townhouse" />
-      <div class="motto">
-        Better homes.<br />
-        Stronger voices.<br />
-        Fair treatment.
-      </div>
+      <div class="motto">Better homes.<br />Stronger voices.<br />Fair treatment.</div>
     </section>
   </main>
 </body>
